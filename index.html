@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>OpenAPI Tools</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <link rel="stylesheet" href="stylesheets/style.css"/>
+    </head>
+    <body>
+        <div id="message-section">
+            <div class="message-wrap">
+                <div id="message"></div>
+            </div>
+        </div>
+
+        <div id="button-section">
+            <div class="btn-wrap">
+                <div id="validate" class="button">validate json request</div>
+                <div id="jsv-export" class="button">deref yaml & dl as json schema</div>
+            </div>
+        </div>
+
+        <div id="editor-section">
+            <div id="label-section">
+                <div id="label-l" class="label">-- OpenAPI YAML Schema --</div>
+                <div id="label-r" class="label">-- Json Request/Response --</div>
+            </div>
+            <div id="editor-l" class="editor">openapi: 3.0.0
+info:
+  title: Example
+  version: 0.0.1
+paths:
+  /add/users:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              required:
+                - username
+              properties:
+                username:
+                  type: string
+      responses:
+        '200':
+          description: OK</div>
+        <div id="editor-r" class="editor">{
+    "method": "POST",
+    "path": "/add/users",
+    "body": {
+        "username": "max"
+    }
+}</div>
+        </div>
+
+        <script src="javascripts/lib/jquery-3.6.1.min.js"></script>
+        <script src="javascripts/lib/jszip.min.js"></script>
+        <script src="javascripts/lib/browserify/file-saver.js" ></script>
+        <script src="javascripts/lib/browserify/js-yaml.js"></script>
+        <script src="javascripts/lib/browserify/json-schema-ref-parser.js"></script>
+        <script src="javascripts/lib/browserify/openapi-enforcer.js"></script>
+        <script src="javascripts/lib/browserify/openapi-schema-to-json-schema.js"></script>
+        <script src="javascripts/lib/ace-src-min/ace.js"></script>
+        <script src="javascripts/index.js"></script>
+    </body>
+</html>

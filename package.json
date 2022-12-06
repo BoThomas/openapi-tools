@@ -1,0 +1,27 @@
+{
+  "name": "openapi-tools",
+  "version": "0.0.1",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BoThomas/openapi-tools.git"
+  },
+  "author": "Thomas Boch",
+  "bugs": {
+    "url": "https://github.com/BoThomas/openapi-tools/issues"
+  },
+  "homepage": "https://github.com/BoThomas/openapi-tools#readme",
+  "main": "index.js",
+  "scripts": {
+    "scss": "node-sass --output-style compressed -o stylesheets stylesheets",
+    "browserify": "browserify node_modules/file-saver/dist/FileSaver.js --standalone FileSaver | uglifyjs > javascripts/lib/browserify/file-saver.js && browserify node_modules/js-yaml/index.js --standalone JsYaml | uglifyjs > javascripts/lib/browserify/js-yaml.js && browserify node_modules/js-yaml/index.js --standalone JsYaml | uglifyjs > javascripts/lib/browserify/js-yaml.js && browserify node_modules/@apidevtools/json-schema-ref-parser/lib/index.js --standalone JsonSchemaRefParser | uglifyjs > javascripts/lib/browserify/json-schema-ref-parser.js && browserify node_modules/openapi-enforcer/index.js --standalone OpenapiEnforcer | uglifyjs > javascripts/lib/browserify/openapi-enforcer.js && browserify node_modules/@openapi-contrib/openapi-schema-to-json-schema/index.js --standalone OpenapiSchemaToJsonSchema | uglifyjs > javascripts/lib/browserify/openapi-schema-to-json-schema.js"
+  },
+  "dependencies": {
+    "@apidevtools/json-schema-ref-parser": "^9.1.0",
+    "@openapi-contrib/openapi-schema-to-json-schema": "^3.2.0",
+    "file-saver": "^2.0.5",
+    "js-yaml": "^4.1.0",
+    "node-sass": "^8.0.0",
+    "openapi-enforcer": "^1.22.1"
+  }
+}
