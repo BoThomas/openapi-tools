@@ -6,25 +6,26 @@
         <link rel="stylesheet" href="stylesheets/style.css"/>
     </head>
     <body>
-        <div id="message-section">
-            <div class="message-wrap">
-                <div id="message"></div>
+        <div class="container">
+            <div class="top">
+                <div class="message-section">
+                    <div class="message-wrap">
+                        <div id="message"></div>
+                    </div>
+                </div>
+                <div class="button-section">
+                    <div id="validate" class="button">validate json request</div>
+                    <div id="jsv-export" class="button">deref yaml & dl as json schema</div>
+                </div>
             </div>
-        </div>
-
-        <div id="button-section">
-            <div class="btn-wrap">
-                <div id="validate" class="button">validate json request</div>
-                <div id="jsv-export" class="button">deref yaml & dl as json schema</div>
-            </div>
-        </div>
-
-        <div id="editor-section">
-            <div id="label-section">
-                <div id="label-l" class="label">-- OpenAPI YAML Schema --</div>
-                <div id="label-r" class="label">-- Json Request/Response --</div>
-            </div>
-            <div id="editor-l" class="editor">openapi: 3.0.0
+            <div class="bottom">
+                <div class="label-section">
+                    <div id="label-l" class="label">OpenAPI YAML Schema</div>
+                    <div id="label-r" class="label">Json Request/Response</div>
+                </div>
+                <div class="editor-section">
+                    <div class="editor-container">
+                        <div id="editor-l" class="editor">openapi: 3.0.0
 info:
   title: Example
   version: 0.0.1
@@ -45,15 +46,19 @@ paths:
       responses:
         '200':
           description: OK</div>
-        <div id="editor-r" class="editor">{
+                    </div>
+                    <div class="editor-container">
+                        <div id="editor-r" class="editor">{
     "method": "POST",
     "path": "/add/users",
     "body": {
         "username": "max"
     }
 }</div>
+                    </div>
+                </div>
+            </div>
         </div>
-
         <script src="javascripts/lib/jquery-3.6.1.min.js"></script>
         <script src="javascripts/lib/jszip.min.js"></script>
         <script src="javascripts/lib/browserify/file-saver.js" ></script>
