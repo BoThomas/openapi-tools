@@ -41,7 +41,7 @@ body {
 
     .button-section {
       width: 100%;
-      padding: 10px 0;
+      padding: 6px 0;
       text-align: center;
       flex: 0 1 auto;
 
@@ -55,13 +55,13 @@ body {
         font-size: 1rem;
         line-height: 20px;
         padding: 4px 15px;
+        margin: 4px 0;
         text-align: center;
         text-decoration: none;
         user-select: none;
         -webkit-user-select: none;
         touch-action: manipulation;
         vertical-align: middle;
-        white-space: nowrap;
       }
 
       .button:hover {
@@ -82,22 +82,24 @@ body {
     display: flex;
     flex-direction: column;
 
+    .label {
+      line-height: 1.5rem;
+      text-align: center;
+      color: #475263;
+      font-size: 0.9rem;
+    }
+
     .label-section {
       height: 1.5rem;
       display: flex;
       width: 100%;
       background: #2e3440;
       border-radius: 5px;
+      margin-bottom: 4px;
 
       .label {
         width: 50%;
-        line-height: 1.5rem;
-        text-align: center;
-        color: #475263;
-        font-size: 0.9rem;
       }
-
-      margin-bottom: 4px;
     }
 
     .editor-section {
@@ -105,8 +107,16 @@ body {
       height: 100%;
       display: flex;
 
+      .label {
+        width: 100%;
+        display: none;
+        background: #2e3440;
+        border-radius: 5px;
+        margin-bottom: 4px;
+      }
+
       .editor-container {
-        width: 50%;
+        width: 100%;
         height: 100%;
         position: relative;
 
@@ -121,12 +131,37 @@ body {
         }
 
         #editor-l {
-          margin-right: 2px;
+          margin: 0 2px 0 0;
         }
 
         #editor-r {
-          margin-left: 2px;
+          margin: 0 0 0 2px;
         }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+
+  .bottom {
+    .label-section {
+      display: none !important;
+    }
+
+    .editor-section {
+      display: block !important;
+
+      .label {
+        display: block !important;
+      }
+
+      #editor-l {
+        margin: 0 0 15px 0 !important;
+      }
+
+      #editor-r {
+        margin: 0 0 5px 0 !important;
       }
     }
   }
