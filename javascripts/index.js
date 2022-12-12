@@ -114,6 +114,28 @@ $(document).ready(function () {
         });
     });
 
+    $("#indent-yaml").click(function () {
+        let $message = $("#message");
+        let yaml = editor_l.getValue();
+        try {
+            editor_l.setValue(JsYaml.dump(JsYaml.load(yaml), {}), -1); //-1 moves cursor to the start
+            $message.text("Yaml indented");
+        } catch (err) {
+            $message.text(err);
+        }
+    });
+
+    $("#indent-json").click(function () {
+        let $message = $("#message");
+        let json = editor_r.getValue();
+        try {
+            editor_r.setValue(JSON.stringify(JSON.parse(json), null, "\t"), -1); //-1 moves cursor to the start
+            $message.text("Json indented");
+        } catch (err) {
+            $message.text(err);
+        }
+    });
+
     //after init finished
     setTimeout(function () {
         $(".editor").show();

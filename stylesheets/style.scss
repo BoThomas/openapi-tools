@@ -93,15 +93,23 @@ body {
         flex: 1;
 
         .label {
-          display: flex;
           background: #2e3440;
-          color: #515e70;
           border-radius: 5px;
           margin-bottom: 4px;
           font-size: 0.9rem;
-          line-height: 1.5rem;
           flex: 0 1 1.5rem;
-          justify-content: center;
+
+          .text {
+            width: 100%;
+            line-height: 1.5rem;
+            color: #515e70;
+            text-align: center;
+          }
+
+          .indent {
+            float: left;
+            cursor: pointer;
+          }
         }
 
         .editor-container {
