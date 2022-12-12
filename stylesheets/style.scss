@@ -77,66 +77,56 @@ body {
   }
 
   .bottom {
-    width: 100%;
-    height: 65%;
     display: flex;
     flex-direction: column;
-
-    .label {
-      line-height: 1.5rem;
-      text-align: center;
-      color: #475263;
-      font-size: 0.9rem;
-    }
-
-    .label-section {
-      height: 1.5rem;
-      display: flex;
-      width: 100%;
-      background: #2e3440;
-      border-radius: 5px;
-      margin-bottom: 4px;
-
-      .label {
-        width: 50%;
-      }
-    }
+    width: 100%;
+    height: 65%;
 
     .editor-section {
-      width: 100%;
-      height: 100%;
       display: flex;
+      flex-direction: row;
+      flex: 1;
 
-      .label {
-        width: 100%;
-        display: none;
-        background: #2e3440;
-        border-radius: 5px;
-        margin-bottom: 4px;
+      .editor-and-label {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+
+        .label {
+          display: flex;
+          background: #2e3440;
+          color: #475263;
+          border-radius: 5px;
+          margin-bottom: 4px;
+          font-size: 0.9rem;
+          line-height: 1.5rem;
+          flex: 0 1 1.5rem;
+          justify-content: center;
+        }
+
+        .editor-container {
+          display: flex;
+          position: relative;
+          flex: 1 1 auto;
+
+          .editor {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: none;
+            border-radius: 5px;
+          }
+        }
       }
 
-      .editor-container {
-        width: 100%;
-        height: 100%;
-        position: relative;
+      .editor-and-label:first-of-type {
+        margin: 0 2px 0 0;
+      }
 
-        .editor {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          display: none;
-          border-radius: 5px;
-        }
-
-        #editor-l {
-          margin: 0 2px 0 0;
-        }
-
-        #editor-r {
-          margin: 0 0 0 2px;
-        }
+      .editor-and-label:last-of-type {
+        margin: 0 0 0 2px;
       }
     }
   }
@@ -145,23 +135,15 @@ body {
 @media only screen and (max-width: 700px) {
 
   .bottom {
-    .label-section {
-      display: none !important;
-    }
-
     .editor-section {
-      display: block !important;
+      flex-direction: column !important;
 
-      .label {
-        display: block !important;
+      .editor-and-label:first-of-type {
+        margin: 0 !important;
       }
 
-      #editor-l {
-        margin: 0 0 15px 0 !important;
-      }
-
-      #editor-r {
-        margin: 0 0 5px 0 !important;
+      .editor-and-label:last-of-type {
+        margin: 4px 0 0 0 !important;
       }
     }
   }

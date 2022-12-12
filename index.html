@@ -19,14 +19,11 @@
                 </div>
             </div>
             <div class="bottom">
-                <div class="label-section">
-                    <div id="label-l" class="label">OpenAPI YAML Schema</div>
-                    <div id="label-r" class="label">Json Request/Response</div>
-                </div>
                 <div class="editor-section">
-                    <div class="label">OpenAPI YAML Schema</div>
-                    <div class="editor-container">
-                        <div id="editor-l" class="editor">openapi: 3.0.0
+                    <div class="editor-and-label">
+                        <div class="label">OpenAPI YAML Schema</div>
+                        <div class="editor-container">
+                            <div id="editor-l" class="editor">openapi: 3.0.0
 info:
   title: Example
   version: 0.0.1
@@ -47,16 +44,19 @@ paths:
       responses:
         '200':
           description: OK</div>
+                        </div>
                     </div>
-                    <div class="label">Json Request/Response</div>
-                    <div class="editor-container">
-                        <div id="editor-r" class="editor">{
+                    <div class="editor-and-label">
+                        <div class="label">Json Request/Response</div>
+                        <div class="editor-container">
+                            <div id="editor-r" class="editor">{
     "method": "POST",
     "path": "/add/users",
     "body": {
         "username": "max"
     }
 }</div>
+                        </div>
                     </div>
                 </div>
             </div>
